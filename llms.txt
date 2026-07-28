@@ -1,0 +1,28 @@
+# Benji Holiday
+
+> Deutsch-ghanaischer Musiker, DJ und Producer aus München. Soul zwischen Hip-Hop und Jazz — live auf der Bühne, am DJ-Pult und im Musikunterricht.
+
+## Über
+Benji Holiday ist ein Künstler aus München mit organischem, analog produziertem Sound (verträumte Gitarren, warme Pianoklänge, groovige Basslines). Cluberprobt in Rote Sonne, Bob Beaman und Harry Klein. Debüt-Single „My Boo" (28.10.2022). Bands: The Barefoot Bunch (bis 2023), Suns of Leisure (seit 2024).
+
+## Angebot
+- Premium Open Format DJ für Markenveranstaltungen (Referenzen: Lacoste, Philipp Plein, BOSS, Ingolstadt Village), Corporate Events, Hochzeiten und private Feiern — Pakete: DJ Experience ab 899 €, Fashion & Brand Event ab 1.000 €, Premium Brand Experience ab 1.500 € (netto); Anfahrt außerhalb München 0,35 €/km.
+- Live-Musik: solo, mit den Suns of Leisure oder als Begleitband.
+- Musikunterricht: DJing, Gitarre, Bass, Piano, Schlagzeug — erste Probestunde kostenlos, danach 35 €/Std. (i. d. R. 4×/Monat, 3 Monate im Voraus, Kündigungsfrist 1 Monat).
+
+## Einsatzgebiet
+München und Umland: Augsburg, Ingolstadt, Rosenheim, Landshut, Freising, Dachau.
+
+## Kontakt
+- Booking: hello@benjiholiday.com
+- Presse: press@benjiholiday.com
+- Telefon: +49 177 1454622
+
+## Seiten
+- /index.html — Startseite
+- /dj.html — DJ-Angebot & Preise
+- /musikunterricht.html — Musikunterricht & Konditionen
+- /band.html — Band & Live-Musik
+- /bio.html — Biografie
+- /kontakt.html — Kontakt & Booking-Formular
+- /dj/[stadt].html — Standortseiten (muenchen, augsburg, ingolstadt, rosenheim, landshut, freising, dachau)
