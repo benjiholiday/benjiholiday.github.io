@@ -393,7 +393,7 @@ p { text-wrap: pretty; }
 
 /* ---------------- Foto-Hintergrund-Sektion (Nacht-Finale) ---------------- */
 .photo-cta { position: relative; overflow: hidden; color: var(--creme); isolation: isolate; }
-.photo-cta > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; z-index: -2; }
+.photo-cta > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; z-index: -2; }
 .photo-cta::after { content: ""; position: absolute; inset: 0; z-index: -1;
   background:
     radial-gradient(ellipse 90% 55% at 22% 30%, rgba(232,151,58,.28), transparent 60%),
@@ -672,4 +672,59 @@ p { text-wrap: pretty; }
   .marquee-track { animation: none !important; }
   .poster-name .pn-line { opacity: 1 !important; transform: none !important; animation: none !important; }
   .spin-badge .sb-disc { animation: none !important; }
+}
+
+/* Preis-Summenzeile (DJ-Coaching-Beispiel) */
+.price-row--total { border-bottom-width: 2px; border-bottom-color: var(--espresso); }
+.price-row--total .pr-name { font-weight: 600; }
+.price-row--total .pr-val { font-size: 1.25rem; }
+
+/* Gigs aus partials/gigs.html: vergangene Termine blendet main.js aus */
+.gig .gig-date:empty::before { content: attr(datetime); }
+.gig-empty { padding: 1.15rem 0; border-bottom: 1px solid var(--linie); color: var(--espresso-2); }
+.gig-empty[hidden] { display: none; }
+
+/* Editorial-Galerie (Bio): ruhiges 4er-Raster, Spalten 2 und 4 leicht versetzt */
+.galerie { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(.8rem, 2vw, 1.4rem); align-items: start; }
+.galerie-item { margin: 0; border-radius: var(--r-m); overflow: hidden; aspect-ratio: 2 / 3; background: var(--ton-tief); }
+.galerie-item:nth-child(even) { margin-top: clamp(1.5rem, 5vw, 4rem); }
+.galerie-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.galerie-item:hover img { transform: scale(1.03); }
+.galerie-credit { margin-top: 1rem; font-family: var(--f-mono); font-size: .75rem; letter-spacing: .08em; color: var(--espresso-2); text-align: right; }
+@media (max-width: 700px) { .galerie { grid-template-columns: repeat(2, 1fr); } }
+
+/* Footer: Foto- und Website-Credit */
+.footer-credit a { color: inherit; text-decoration: none; border-bottom: 1px solid currentColor; }
+.footer-credit a:hover { color: var(--sonne); }
+
+/* Booking-Finale: Desktop = Hochformat-Foto rechts, läuft nach links ins Dunkel aus */
+@media (min-width: 901px) {
+  .photo-cta > img { left: auto; width: 46%; }
+  .photo-cta::after { background:
+    radial-gradient(ellipse 70% 60% at 18% 35%, rgba(232,151,58,.22), transparent 60%),
+    linear-gradient(90deg, var(--nacht) 54%, rgba(21,13,8,.55) 72%, rgba(21,13,8,.08) 100%); }
+}
+
+/* Preis-Liste mobil: Name + Preis in einer Zeile, Beschreibung darunter (einheitlich) */
+@media (max-width: 560px) {
+  .price-row { display: grid; grid-template-columns: 1fr auto; grid-template-areas: "name val" "desc desc"; gap: .25rem 1rem; }
+  .price-row .pr-name { grid-area: name; }
+  .price-row .pr-val { grid-area: val; }
+  .price-row .pr-desc { grid-area: desc; }
+}
+
+/* Gig-Liste mobil: Datum + Ort/Art oben, Location-Name volle Breite darunter */
+@media (max-width: 560px) {
+  .gig { display: grid; grid-template-columns: auto 1fr; grid-template-areas: "date city" "venue venue"; gap: .3rem 1rem; align-items: baseline; }
+  .gig .gig-date { grid-area: date; min-width: 0; }
+  .gig .gig-city { grid-area: city; text-align: right; }
+  .gig .gig-venue { grid-area: venue; }
+}
+
+/* Referenzliste mobil: Name volle Breite, Unterzeile darunter (lange Doppelnamen) */
+@media (max-width: 560px) {
+  .lineup-row { flex-direction: column; align-items: flex-start; gap: .35rem; }
+  .lineup-row .lu-name { display: block; }
+  .lineup-row .lu-name::before { content: none; }
+  .lineup-row .lu-tag { white-space: normal; }
 }

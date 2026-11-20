@@ -200,9 +200,31 @@ function initSpotify() {
   });
 }
 
+/* ---- Gigs (partials/gigs.html): Datum formatieren, Vergangenes ausblenden ---- */
+function initGigs() {
+  const list = document.querySelector('[data-gigs]');
+  if (!list) return;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const gigs = [];
+  list.querySelectorAll('.gig').forEach(gig => {
+    const t = gig.querySelector('time[datetime]');
+    const m = t && /^(\d{4})-(\d{2})-(\d{2})$/.exec(t.getAttribute('datetime').trim());
+    if (!m) return; // ungültiges Datum: Zeile bleibt mit Rohwert sichtbar
+    const d = new Date(+m[1], +m[2] - 1, +m[3]);
+    if (d < today) { gig.remove(); return; }
+    t.textContent = m[3] + '.' + m[2] + '.' + (+m[1] !== today.getFullYear() ? m[1] : '');
+    gigs.push([d, gig]);
+  });
+  gigs.sort((a, b) => a[0] - b[0]).forEach(([, gig]) => list.appendChild(gig));
+  const empty = document.querySelector('[data-gigs-empty]');
+  if (empty) empty.hidden = list.querySelector('.gig') !== null;
+}
+
 /* ---- Init ---- */
 (async () => {
   await loadIncludes();
+  initGigs();
   initBurger();
   highlightActiveNav();
   initHeaderAutoHide();
