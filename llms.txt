@@ -8,10 +8,10 @@ Benji Holiday ist ein Künstler aus München mit organischem, analog produzierte
 ## Angebot
 - Premium Open Format DJ für Markenveranstaltungen (Referenzen: Lacoste, Philipp Plein, BOSS, Ingolstadt Village), Corporate Events, Hochzeiten und private Feiern — Pakete: DJ Experience ab 899 €, Fashion & Brand Event ab 1.000 €, Premium Brand Experience ab 1.500 € (netto); Anfahrt außerhalb München 0,35 €/km.
 - Live-Musik: solo, mit den Suns of Leisure oder als Begleitband.
-- Musikunterricht: DJing, Gitarre, Bass, Piano, Schlagzeug — erste Probestunde kostenlos, danach 35 €/Std. (i. d. R. 4×/Monat, 3 Monate im Voraus, Kündigungsfrist 1 Monat).
+- Musikunterricht: DJing, Gitarre, Bass, Piano, Schlagzeug — erste Probestunde kostenlos; Instrumente (Gitarre, Bass, Piano, Schlagzeug) 37,50 €/Std. (i. d. R. 4×/Monat, 3 Monate im Voraus, Kündigungsfrist 1 Monat); privates DJ-Coaching als Paket, Beispiel: 4 Std. Coaching 400 € + Location inkl. Equipment 300 € + Videoaufnahme 100 € + Audioaufnahme MP3/WAV 50 € = 850 €. Probestunde, Zahlweise und Kündigungsfrist gelten auch fürs DJ-Coaching.
 
 ## Einsatzgebiet
-München und Umland: Augsburg, Ingolstadt, Rosenheim, Landshut, Freising, Dachau.
+München und Umland: Augsburg, Ingolstadt, Rosenheim, Landshut, Freising, Dachau. Außerdem auf Anfrage: Heidelberg, Basel (Schweiz) und Wien (Österreich), Anfahrt nach km ab München, ggf. Übernachtung, beides vorab im Angebot ausgewiesen.
 
 ## Kontakt
 - Booking: hello@benjiholiday.com
@@ -25,4 +25,4 @@ München und Umland: Augsburg, Ingolstadt, Rosenheim, Landshut, Freising, Dachau
 - /band.html — Band & Live-Musik
 - /bio.html — Biografie
 - /kontakt.html — Kontakt & Booking-Formular
-- /dj/[stadt].html — Standortseiten (muenchen, augsburg, ingolstadt, rosenheim, landshut, freising, dachau)
+- /dj/[stadt].html — Standortseiten (muenchen, augsburg, ingolstadt, rosenheim, landshut, freising, dachau, heidelberg, basel, wien)
