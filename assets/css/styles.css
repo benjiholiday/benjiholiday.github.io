@@ -383,6 +383,41 @@ p { text-wrap: pretty; }
 }
 .lineup-row:nth-child(even) .lu-name { font-style: italic; }
 
+/* Lichtschweif über die Line-up-Namen (von vorne nach hinten), Muster wie S1-Gold-Shimmer.
+   Klasse .lu-shine setzt main.js nur ohne prefers-reduced-motion → ohne JS bleibt alles wie vorher.
+   background-clip:text würde das unsichtbare ✦ (::before des Namens) mitfärben → Stern wandert
+   in diesem Modus auf die Zeile (.lineup-row::before), Verhalten identisch. */
+.lineup-row.lu-shine .lu-name {
+  flex: 0 1 auto; padding-right: .14em; /* Kursiv-Überhang nicht abschneiden */
+  background-image: linear-gradient(110deg,
+    var(--creme) 0%, var(--creme) 36%,
+    var(--sonne) 44%, #fff3df 50%, var(--sonne) 56%,
+    var(--creme) 64%, var(--creme) 100%);
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lineup-row.lu-shine .lu-name::before { content: none; }
+.lineup-row.lu-shine::before {
+  content: "✦"; color: var(--sonne);
+  font-size: calc(.45 * clamp(1.5rem, 3.6vw, 2.6rem)); line-height: 1;
+  margin-right: -.4rem; /* Zeilen-gap 1.2rem → wie vorher .8rem zum Namen */
+  opacity: 0; transform: translateX(-6px);
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.lineup-row.lu-shine:hover::before { opacity: 1; transform: none; }
+.lineup-row.lu-shine .lu-tag { margin-left: auto; }
+.lineup-row.lu-shine.lu-lit .lu-name {
+  background-position: -60% 0;
+  transition: background-position 1.6s cubic-bezier(.25,.46,.45,.94);
+  transition-delay: var(--lu-d, 0s);
+}
+@media (max-width: 560px) {
+  .lineup-row.lu-shine::before { content: none; }
+  .lineup-row.lu-shine .lu-tag { margin-left: 0; }
+}
+
 /* Großes Zitat / Referenzsatz */
 .pullquote {
   font-family: var(--f-display); font-weight: 400;
