@@ -221,6 +221,33 @@ function initGigs() {
   if (empty) empty.hidden = list.querySelector('.gig') !== null;
 }
 
+/* ---- Line-up-Schimmer: Lichtschweif läuft beim Hereinscrollen über jeden Namen ---- */
+function initLineupShine() {
+  const rows = document.querySelectorAll('.lineup-row');
+  if (!rows.length || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const play = (row, delay) => {
+    row.style.setProperty('--lu-d', delay + 's');
+    row.classList.remove('lu-lit');
+    void row.offsetWidth; // Reflow → Übergang startet neu
+    row.classList.add('lu-lit');
+  };
+  const io = new IntersectionObserver((entries) => {
+    let n = 0;
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      play(e.target, Math.min(n++, 8) * 0.09);
+      io.unobserve(e.target);
+    });
+  }, { threshold: .6 });
+  const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  rows.forEach(row => {
+    row.classList.add('lu-shine');
+    io.observe(row);
+    if (fine) row.addEventListener('pointerenter', () => { if (row.classList.contains('lu-lit')) play(row, 0); });
+  });
+}
+
 /* ---- Init ---- */
 (async () => {
   await loadIncludes();
@@ -229,6 +256,7 @@ function initGigs() {
   highlightActiveNav();
   initHeaderAutoHide();
   initReveals();
+  initLineupShine();
   initMarquee();
   initMagnetic();
   initForms();
